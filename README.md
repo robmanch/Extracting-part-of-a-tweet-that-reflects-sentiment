@@ -46,10 +46,12 @@ Our dataset consists of tweets in the English language which can be easily under
 ### Word Embeddings
 It is a class of techniques where individual words are represented by the low-dimensional dense vectors, and for the words that have a similar meaning, they should have a similar representation. One of the benefits of using low-dimensional dense vectors is the computation.
 For example:
+
 <img src = "images/emb.png">
 
 As we know that we have to predict the specific part of the given tweet based on its sentiment, we will try to solve this as a sequence-to-sequence problem i.e., we assume our input(text) as a sequence of words and the output as 0 or 1 for the corresponding input word at each time steps (1 if the input word is responsible for sentiment, otherwise 0).
 For example:
+
 <img src = "images/ex.png">
 
 Note: The text pre-processing techniques, such as removing stop words, symbols, extra spaces, URLs, etc., will only be used for the exploratory data analysis. As the prediction can have these words in it so we will not use text pre-processing for the input of the model.
@@ -218,7 +220,7 @@ As we know that we have to predict the specific part of the given tweet based on
 <b> RNN: </b>
 Recurrent neural networks, or RNNs, are a type of artificial neural network that add additional weights to the network to create cycles in the network graph to maintain an internal state.
 
-<img src = "images/RNN.png">
+<img src = "images/RNN.jpg">
 
 Weakness of RNN:
 1.	RNN tends to gradients vanishing, so it becomes difficult to update the parameters of RNN based on the longer dependencies. But in English sentences, we may have very long dependencies.
@@ -237,7 +239,8 @@ To overcome the weakness of LSTM, we will use bidirectional LSTM, in which the c
 
 <img src = "images/Bidirectional_LSTM.png">
 
-## Sequential Model with Multiple Layers: Three different sequnetial models are trained, one for each setiment class.
+## Sequential Model with Multiple Layers:
+Three different sequnetial models are trained, one for each setiment class.
 
 <img src = "images/model.png">
 
@@ -246,15 +249,15 @@ In the backward propagation, the learning/optimization algorithm tries to update
 
 <img src = "images/loss.jpg">
 
-### Sequential Model for negative sentiment
+### Model performance for negative sentiment
 
 <img src = "images/acc_neg.png">
 
-### Sequential Model for positive sentiment
+### Model performance for positive sentiment
 
 <img src = "images/acc_pos.png">
 
-### Sequential Model for neutral sentiment
+### Model performance for neutral sentiment
 
 <img src = "images/acc_neu.png">
 
